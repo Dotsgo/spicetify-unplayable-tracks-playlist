@@ -1,5 +1,5 @@
 /*
- * Spicetify Playlist from Unplayable Tracks
+ * Spicetify Unplayable Tracks to Playlist
  *
  * MIT License
  *
@@ -125,7 +125,7 @@
         {
           name: newPlaylistName,
           public: true,
-          description: "Created with Spicetify Playlist from Unplayable Tracks",
+          description: "Created with Spicetify Unplayable Tracks to Playlist",
         }
       );
       if (!response.id) {

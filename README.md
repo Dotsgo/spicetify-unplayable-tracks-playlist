@@ -2,9 +2,9 @@
 
 Spicetify context menu extension that gets all unplayable tracks from selected playlist and copies them to a new playlist. Unplayable is per is_playable property of a track, meaning available/unavailable in the user's market (see full definition at https://developer.spotify.com/documentation/web-api/reference/get-playlists-tracks).
 
-This will not include otherwise playable tracks from artists you have blocked using Spotify's built-in "Don't play this artist" feature. 
+This will not include otherwise playable tracks from artists you have blocked using Spotify's built-in "Don't play this artist" feature. You also do not need to be the owner of the playlist.
 
-You do not need to be the owner of the playlist.
+Can be installed from Spicetify Marketplace or manually below.
 
 ![sample](/sample1.png)
 ![sample](/sample2.png)

@@ -136,7 +136,12 @@
       return newPlaylistID;
     }
 
-    const addTracksToPlaylist = async (playlistId, tracks = []) => {
+    const addTracksToPlaylist = async (playlistId = null, tracks = []) => {
+
+       if (playlistId == null) {
+        return;
+      }
+      
       const requestURL = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`;
       const batchSize = 100;
       let adjustedAPIDelay = API_DELAY;
@@ -144,6 +149,8 @@
       if (tracks.length >= 1000) {
         adjustedAPIDelay = API_DELAY * 2;
       }
+
+     
 
       console.log("Adding tracks to playlist...");
       while (tracks.length > 0) {
@@ -170,22 +177,26 @@
     Spicetify.showNotification("Making playlist from unavailable tracks...");
     await new Promise((resolve) => setTimeout(resolve, API_DELAY));
 
+    let newPlaylistID = null;
     const originalPlaylistName = await getPlaylistName();
     const playlistTracks = await getPlaylistTracks();
     console.log("Playlist tracks fetched: " + JSON.stringify(playlistTracks));
 
     const unplayableTracks = determineunplayableTracks(playlistTracks);
 
-    const newPlaylistID = await createNewPlaylist(originalPlaylistName);
-    console.log("New playlist ID: " + newPlaylistID);
+    if (unplayableTracks.length > 0) {
+      newPlaylistID = await createNewPlaylist(originalPlaylistName);
+
+      console.log("New playlist ID: " + newPlaylistID);
+    }
 
     await addTracksToPlaylist(newPlaylistID, unplayableTracks)
       .then(() => {
-        Spicetify.showNotification("Unplayable track playlist created");
+        Spicetify.showNotification("Unplayable Tracks to Playlist done");
       })
       .catch((error) => {
         console.error(error);
-        Spicetify.showNotification("Failed to make unplayable track playlist");
+        Spicetify.showNotification("Unplayable Tracks to Playlist failed");
       });
   }
 

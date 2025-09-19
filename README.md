@@ -1,8 +1,8 @@
-# Spicetify Unplayable Tracks to Playlist
+# Spicetify Playlist Unplayable Tracks
 
-Spicetify context menu extension that gets all unplayable tracks from selected playlist and copies them to a new playlist. Unplayable is per is_playable property of a track, meaning available/unavailable in the user's market (see full definition at https://developer.spotify.com/documentation/web-api/reference/get-playlists-tracks).
+Spicetify context menu extension that gets adds buttons to (1) get all unplayable tracks from selected playlist and copy them to a new playlist and (2) remove all unplayable tracks from a playlist. Unplayable is per is_playable property of a track, meaning available/unavailable in the user's market (see full definition at https://developer.spotify.com/documentation/web-api/reference/get-playlists-tracks).
 
-This will not include otherwise playable tracks from artists you have blocked using Spotify's built-in "Don't play this artist" feature. You also do not need to be the owner of the playlist.
+This will not include otherwise playable tracks from artists you have blocked using Spotify's built-in "Don't play this artist" feature. You also do not need to be the owner of the playlist to make a playlist of its unplayable tracks, but you do need to be the owner to remove them.
 
 Can be installed from Spicetify Marketplace or manually below.
 
@@ -31,6 +31,6 @@ Can be installed from Spicetify Marketplace or manually below.
 
 Right click a playlist in your library, or open the playlist and click the three dots (...) button to open the context menu.
 
-Click the menu option reading "Playlist from Unplayable (Unavailable) Tracks" and a notification should appear to indicate that the script has started. After completion, another notification will appear indicating success or failure.
+Click the menu option reading "Playlist from Unplayable (Unavailable) Tracks" or the one reading "Remove Unplayable (Unavailable) Tracks" and a notification should appear to indicate that the script has started. After completion, another notification will appear indicating success or failure.
 
 Running is fast and shouldn't take more than a few seconds for a playlist of ~10,000 mostly playable tracks, though if there are thousands of unplayable tracks it make take a minute.

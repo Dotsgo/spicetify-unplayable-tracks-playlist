@@ -1,7 +1,7 @@
 [
   {
-    "name": "Unplayable Tracks to Playlist",
-    "description": "Copies a playlist's unplayable (unavailable in user's market) tracks to a new playlist",
+    "name": "Playlist Unplayable Tracks",
+    "description": "Get a playlist's unplayable tracks in a new playlist or remove them.",
     "preview": "sample1.png",
     "main": "unplayableTracksPlaylist.js",
     "readme": "README.md"
